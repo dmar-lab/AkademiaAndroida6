@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id "kotlin-kapt"
     id "de.mannodermaus.android-junit5"
 }
 
@@ -69,6 +70,11 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.8.1"
     implementation "com.squareup.okhttp3:okhttp:4.6.0"
     implementation "com.squareup.okhttp3:logging-interceptor:4.6.0"
+
+    //room dependencies
+    kapt "androidx.room:room-compiler:2.4.1"
+    implementation "androidx.room:room-runtime:2.4.1"
+    implementation "androidx.room:room-ktx:2.4.1"
 
     //tests
     testImplementation "org.junit.jupiter:junit-jupiter-api:5.8.2"
