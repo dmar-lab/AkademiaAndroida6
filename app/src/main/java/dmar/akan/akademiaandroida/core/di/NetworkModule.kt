@@ -1,7 +1,7 @@
 package dmar.akan.akademiaandroida.core.di
 
 import dmar.akan.akademiaandroida.BuildConfig
-import dmar.akan.akademiaandroida.features.data.RickAndMortyApi
+import dmar.akan.akademiaandroida.features.data.remote.RickAndMortyApi
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

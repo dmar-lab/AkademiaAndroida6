@@ -1,4 +1,4 @@
-package dmar.akan.akademiaandroida.di
+package dmar.akan.akademiaandroida.core.di
 
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
