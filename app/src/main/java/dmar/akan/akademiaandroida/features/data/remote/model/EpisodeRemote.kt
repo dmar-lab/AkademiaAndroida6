@@ -10,7 +10,6 @@ data class EpisodeRemote(
     @SerializedName("episode") val code: String,
     @SerializedName("characters") val characters: List<String>,
     @SerializedName("url") val url: String,
-    @SerializedName("created") val created: String
 ) {
 
     // mapping from EpisodeRemote to episode
