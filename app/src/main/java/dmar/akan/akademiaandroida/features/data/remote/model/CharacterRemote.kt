@@ -9,8 +9,8 @@ data class CharacterRemote(
     @SerializedName("species") val species: String,
     @SerializedName("type") val type: String,
     @SerializedName("gender") val gender: String,
-    @SerializedName("origin") val origin: List<String>,
-    @SerializedName("location") val location: List<String>,
+    @SerializedName("origin") val origin: List<CharacterOriginRemote>,  //DOPASOWALEM (name, url)
+    @SerializedName("location") val location: List<CharacterLocationRemote>, //DOPASOWALEM (dataclass)
     @SerializedName("image") val image: String,
     @SerializedName("episode") val episode: List<String>,
     @SerializedName("url") val url: String
@@ -28,4 +28,11 @@ data class CharacterRemote(
         episode = episode,
         url = url
     )
+
+    inner class CharacterOriginRemote {
+        val name: String = ""
+        val url: String = ""
+    }
+
+    // CharacterLocationRemote object in external file
 }
