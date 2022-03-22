@@ -3,6 +3,7 @@ package dmar.akan.akademiaandroida.features.data.remote.model
 import com.google.gson.annotations.SerializedName
 import dmar.akan.akademiaandroida.features.characters.domain.model.Character
 
+// data classes can be nested
 data class CharacterRemote(
     @SerializedName("id") val id: Int,
     @SerializedName("name") val name: String,
@@ -29,10 +30,13 @@ data class CharacterRemote(
         url = url
     )
 
-    inner class CharacterOriginRemote {
-        val name: String = ""
+    data class CharacterOriginRemote(
+        val name: String = "",
         val url: String = ""
-    }
+    )
 
-    // CharacterLocationRemote object in external file
+    data class CharacterLocationRemote(
+        val name: String,
+        val url: String
+    )
 }
