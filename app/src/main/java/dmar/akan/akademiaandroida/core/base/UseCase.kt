@@ -11,7 +11,7 @@ abstract class UseCase<out Type, in Params> {
         params: Params,
         scope: CoroutineScope,
         executionDispatcher: CoroutineDispatcher = Dispatchers.IO,
-        onResult: (Result<Type>) -> Unit = {} //wartosc domyslna jako pusta lambda
+        onResult: (Result<Type>) -> Unit = {} // default value as empty lambda
     ) {
         scope.launch {
             val result = withContext(executionDispatcher) {
