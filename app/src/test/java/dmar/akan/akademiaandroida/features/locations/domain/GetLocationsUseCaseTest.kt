@@ -1,6 +1,5 @@
 package dmar.akan.akademiaandroida.features.locations.domain
 
-import dmar.akan.akademiaandroida.features.locations.LocationRepository
 import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.GlobalScope

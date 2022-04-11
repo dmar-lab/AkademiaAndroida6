@@ -1,6 +1,5 @@
 package dmar.akan.akademiaandroida.features.characters.domain
 
-import dmar.akan.akademiaandroida.features.characters.CharacterRepository
 import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.GlobalScope

@@ -1,4 +1,4 @@
-package dmar.akan.akademiaandroida.features.characters
+package dmar.akan.akademiaandroida.features.characters.domain
 
 import dmar.akan.akademiaandroida.features.characters.domain.model.Character
 

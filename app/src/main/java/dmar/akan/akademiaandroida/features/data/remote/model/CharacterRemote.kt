@@ -10,8 +10,8 @@ data class CharacterRemote(
     @SerializedName("species") val species: String,
     @SerializedName("type") val type: String,
     @SerializedName("gender") val gender: String,
-    @SerializedName("origin") val origin: List<CharacterOriginRemote>,  //DOPASOWALEM (name, url)
-    @SerializedName("location") val location: List<CharacterLocationRemote>, //DOPASOWALEM (dataclass)
+    @SerializedName("origin") val origin: CharacterOriginRemote,
+    @SerializedName("location") val location: CharacterLocationRemote,
     @SerializedName("image") val image: String,
     @SerializedName("episode") val episode: List<String>,
     @SerializedName("url") val url: String
@@ -23,8 +23,8 @@ data class CharacterRemote(
         species = species,
         type = type,
         gender = gender,
-        origin = origin,
-        location = location,
+        origin = origin, //uuuuuuuuuuuuuuuuuuuuuu "pułapka żwirowa"
+        location = location, //uuuuuuuuuuuuuuuuuuuuuu
         image = image,
         episode = episode,
         url = url
@@ -36,7 +36,17 @@ data class CharacterRemote(
     )
 
     data class CharacterLocationRemote(
-        val name: String,
-        val url: String
+        val name: String = "",
+        val url: String = ""
     )
 }
+/**
+w 26
+Type mismatch.
+Required:
+Character.CharacterOrigin
+Found:
+CharacterRemote.CharacterOriginRemote
+
+podobnie w 27
+ */

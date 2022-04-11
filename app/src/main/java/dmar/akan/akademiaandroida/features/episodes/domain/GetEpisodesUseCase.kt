@@ -1,7 +1,6 @@
 package dmar.akan.akademiaandroida.features.episodes.domain
 
 import dmar.akan.akademiaandroida.core.base.UseCase
-import dmar.akan.akademiaandroida.features.episodes.EpisodeRepository
 import dmar.akan.akademiaandroida.features.episodes.domain.model.Episode
 
 class GetEpisodesUseCase(private val episodeRepository: EpisodeRepository) :

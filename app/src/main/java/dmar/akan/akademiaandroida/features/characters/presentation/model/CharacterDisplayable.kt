@@ -1,7 +1,6 @@
 package dmar.akan.akademiaandroida.features.characters.presentation.model
 
 import dmar.akan.akademiaandroida.features.characters.domain.model.Character
-import dmar.akan.akademiaandroida.features.data.remote.model.CharacterRemote
 
 data class CharacterDisplayable(
     val id: Int,
@@ -9,8 +8,8 @@ data class CharacterDisplayable(
     val species: String,
     val type: String,
     val gender: String,
-    val origin: List<CharacterRemote.CharacterOriginRemote>,
-    val location: List<CharacterRemote.CharacterLocationRemote>,
+    val origin: CharacterOriginDisplayable,
+    val location: CharacterLocationDisplayable,
     val image: String,
     val episode: List<String>,
     val url: String
@@ -22,10 +21,20 @@ data class CharacterDisplayable(
         species = character.species,
         type = character.type,
         gender = character.gender,
-        origin = character.origin,
-        location = character.location,
+        origin = character.origin, // UUUUUWAGA
+        location = character.location, // UUUUUWAGA
         image = character.image,
         episode = character.episode,
         url = character.url
+    )
+
+    data class CharacterOriginDisplayable(
+        val name: String = "",
+        val url: String = ""
+    )
+
+    data class CharacterLocationDisplayable(
+        val name: String = "",
+        val url: String = ""
     )
 }

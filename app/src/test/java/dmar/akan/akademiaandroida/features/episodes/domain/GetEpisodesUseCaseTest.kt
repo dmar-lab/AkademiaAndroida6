@@ -1,6 +1,5 @@
 package dmar.akan.akademiaandroida.features.episodes.domain
 
-import dmar.akan.akademiaandroida.features.episodes.EpisodeRepository
 import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.GlobalScope

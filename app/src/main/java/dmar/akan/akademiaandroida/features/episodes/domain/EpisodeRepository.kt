@@ -1,4 +1,4 @@
-package dmar.akan.akademiaandroida.features.episodes
+package dmar.akan.akademiaandroida.features.episodes.domain
 
 import dmar.akan.akademiaandroida.features.episodes.domain.model.Episode
 
