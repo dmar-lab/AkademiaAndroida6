@@ -21,8 +21,8 @@ data class CharacterDisplayable(
         species = character.species,
         type = character.type,
         gender = character.gender,
-        origin = character.origin, // UUUUUWAGA
-        location = character.location, // UUUUUWAGA
+        origin = CharacterOriginDisplayable(character.origin), // UWAGA
+        location = CharacterLocationDisplayable(character.location), // UWAGA
         image = character.image,
         episode = character.episode,
         url = character.url
@@ -31,10 +31,20 @@ data class CharacterDisplayable(
     data class CharacterOriginDisplayable(
         val name: String = "",
         val url: String = ""
-    )
+    ) {
+        constructor(characterOrigin: Character.CharacterOrigin) : this(
+            name = characterOrigin.name,
+            url = characterOrigin.url
+        )
+    }
 
     data class CharacterLocationDisplayable(
         val name: String = "",
         val url: String = ""
-    )
+    ) {
+        constructor(characterLocation: Character.CharacterLocation) : this(
+            name = characterLocation.name,
+            url = characterLocation.url
+        )
+    }
 }

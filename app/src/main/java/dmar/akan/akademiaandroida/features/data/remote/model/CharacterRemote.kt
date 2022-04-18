@@ -23,8 +23,8 @@ data class CharacterRemote(
         species = species,
         type = type,
         gender = gender,
-        origin = origin, //uuuuuuuuuuuuuuuuuuuuuu "pułapka żwirowa"
-        location = location, //uuuuuuuuuuuuuuuuuuuuuu
+        origin = origin.toCharacterOrigin(),
+        location = location.toCharacterLocation(),
         image = image,
         episode = episode,
         url = url
@@ -33,20 +33,20 @@ data class CharacterRemote(
     data class CharacterOriginRemote(
         val name: String = "",
         val url: String = ""
-    )
+    ) {
+        fun toCharacterOrigin() = Character.CharacterOrigin(
+            name = name,
+            url = url
+        )
+    }
 
     data class CharacterLocationRemote(
         val name: String = "",
         val url: String = ""
-    )
+    ) {
+        fun toCharacterLocation() = Character.CharacterLocation(
+            name = name,
+            url = url
+        )
+    }
 }
-/**
-w 26
-Type mismatch.
-Required:
-Character.CharacterOrigin
-Found:
-CharacterRemote.CharacterOriginRemote
-
-podobnie w 27
- */
