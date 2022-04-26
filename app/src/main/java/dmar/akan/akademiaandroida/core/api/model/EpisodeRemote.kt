@@ -1,4 +1,4 @@
-package dmar.akan.akademiaandroida.features.data.remote.model
+package dmar.akan.akademiaandroida.core.api.model
 
 import com.google.gson.annotations.SerializedName
 import dmar.akan.akademiaandroida.features.episodes.domain.model.Episode
