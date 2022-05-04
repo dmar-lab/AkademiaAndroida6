@@ -12,6 +12,7 @@ EpisodeRemote(
     @SerializedName("characters") val characters: List<String>, // list of links
     @SerializedName("url") val url: String,
 ) {
+    companion object
 
     // mapping from EpisodeRemote to episode
     fun toEpisode() = Episode(
