@@ -14,6 +14,7 @@ data class EpisodeCached(
     val characters: List<String>, // list of links
     val url: String
 ) {
+    //is used in EpisodeRepositoryImpl.saveEpisodesToLocal(episodes: List<Episode>)
     constructor(episode: Episode) : this(
         episode.id,
         episode.name,
@@ -25,7 +26,6 @@ data class EpisodeCached(
 
     companion object
 
-    // mapping from EpisodeRemote to episode
     fun toEpisode() = Episode(
         id = id,
         name = name,
