@@ -13,6 +13,7 @@ data class LocationRemote(
 ) {
     companion object
 
+    // mapping from LocationRemote to Location
     fun toLocation() = Location(
         id = id,
         name = name,

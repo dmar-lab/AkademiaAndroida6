@@ -18,7 +18,7 @@ internal class LocationRepositoryImplTest {
 
     @Test
     fun `GIVEN network is connected WHEN locations request THEN fetch locations from API`() {
-        //given
+        // given
         val api = mockk<RickAndMortyApi> {
             coEvery { getLocation() } returns LocationResponse.mock()
         }
@@ -29,16 +29,16 @@ internal class LocationRepositoryImplTest {
         val repository: LocationRepository =
             LocationRepositoryImpl(api, locationDao, networkStateProvider)
 
-        //when
+        // when
         runBlocking { repository.getLocations() }
 
-        //then
+        // then
         coVerify { api.getLocation() }
     }
 
     @Test
     fun `GIVEN network is connected AND successful data fetch WHEN location request THEN save locations to local database`() {
-        //given
+        // given
         val api = mockk<RickAndMortyApi> {
             coEvery { getLocation() } returns LocationResponse.mock()
         }
@@ -49,16 +49,16 @@ internal class LocationRepositoryImplTest {
         val repository: LocationRepository =
             LocationRepositoryImpl(api, locationDao, networkStateProvider)
 
-        //when
+        // when
         runBlocking { repository.getLocations() }
 
-        //then
+        // then
         coVerify { locationDao.saveLocations(*anyVararg()) }
     }
 
     @Test
     fun `GIVEN network is disconnected WHEN locations request THEN fetch locations from local database`() {
-        //given
+        // given
         val api = mockk<RickAndMortyApi>(relaxed = true)
         val locationDao = mockk<LocationDao> {
             coEvery { getLocations() } returns listOf(LocationCached.mock(), LocationCached.mock())
@@ -69,10 +69,10 @@ internal class LocationRepositoryImplTest {
         val repository: LocationRepository =
             LocationRepositoryImpl(api, locationDao, networkStateProvider)
 
-        //when
+        // when
         runBlocking { repository.getLocations() }
 
-        //then
+        // then
         coVerify { locationDao.getLocations() }
     }
 }

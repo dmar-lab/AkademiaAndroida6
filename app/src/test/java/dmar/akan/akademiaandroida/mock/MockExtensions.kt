@@ -75,7 +75,7 @@ fun LocationCached.Companion.mock() = LocationCached(
 )
 
 /* ------------------------------------------------------ */
-/*
+
 @TestOnly
 fun CharacterRemote.Companion.mock() = CharacterRemote(
     id = 1,
@@ -83,13 +83,26 @@ fun CharacterRemote.Companion.mock() = CharacterRemote(
     species = "character species",
     type = "character type",
     gender = "character gender",
-//    origin =,
-//    location =,
+    origin = CharacterRemote.CharacterOriginRemote(
+        "character origin name",
+        "character origin url"
+    ),
+    location = CharacterRemote.CharacterLocationRemote(
+        "character location name",
+        "character location url"
+    ),
     image = "character image",
     episode = emptyList(),
     url = "character url"
 )
 
+/*
+@TestOnly
+fun LocationCharacterRemote.Companion.mock() = LocationCharacterRemote(
+    name = "location character name",
+    url = "location character url"
+)
+*/
 @TestOnly
 fun CharacterResponse.Companion.mock() = CharacterResponse(
     info = ResponseInfo.mock(),
@@ -99,9 +112,7 @@ fun CharacterResponse.Companion.mock() = CharacterResponse(
         CharacterRemote.mock()
     )
 )
-*/
-
-/*
+/* type mismath
 @TestOnly
 fun CharacterCached.Companion.mock() = CharacterCached(
     id = 1,
@@ -109,10 +120,23 @@ fun CharacterCached.Companion.mock() = CharacterCached(
     species = "character species",
     type = "character type",
     gender = "character gender",
-//    origin =,
-//    location =,
+    origin = CharacterOriginCached(
+        "character origin cached name",
+        "character origin cached url"
+    ),
+    location = CharacterLocationCached(
+        "character location cached name",
+        "character location cached url"
+    ),
     image = "character image",
     episode = emptyList(),
     url = "character url"
+)
+ */
+/*
+@TestOnly
+fun LocationCharacterCached.Companion.mock() = LocationCharacterCached(
+    name = "location character name",
+    url = "location character url",
 )
 */
