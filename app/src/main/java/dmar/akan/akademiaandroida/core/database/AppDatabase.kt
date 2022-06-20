@@ -13,7 +13,7 @@ import dmar.akan.akademiaandroida.features.locations.data.local.model.LocationCa
 @Database(entities = [EpisodeCached::class,
                      CharacterCached::class,
                      LocationCached::class], version = 1)
-@TypeConverters(ListConverter::class, ObjectConverter::class)
+@TypeConverters(ListConverter::class)  // , ObjectConverter::class
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun episodeDao(): EpisodeDao

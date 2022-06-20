@@ -1,6 +1,9 @@
 package dmar.akan.akademiaandroida.mock
 
 import dmar.akan.akademiaandroida.core.api.model.*
+import dmar.akan.akademiaandroida.features.characters.data.local.model.CharacterCached
+import dmar.akan.akademiaandroida.features.characters.data.local.model.CharacterLocationCached
+import dmar.akan.akademiaandroida.features.characters.data.local.model.CharacterOriginCached
 import dmar.akan.akademiaandroida.features.episodes.data.local.model.EpisodeCached
 import dmar.akan.akademiaandroida.features.locations.data.local.model.LocationCached
 import org.jetbrains.annotations.TestOnly
@@ -98,7 +101,7 @@ fun CharacterRemote.Companion.mock() = CharacterRemote(
 
 /*
 @TestOnly
-fun LocationCharacterRemote.Companion.mock() = LocationCharacterRemote(
+fun CharacterRemote.CharacterLocationRemote.Companion.mock() = CharacterLocationRemote(
     name = "location character name",
     url = "location character url"
 )
@@ -112,7 +115,7 @@ fun CharacterResponse.Companion.mock() = CharacterResponse(
         CharacterRemote.mock()
     )
 )
-/* type mismath
+
 @TestOnly
 fun CharacterCached.Companion.mock() = CharacterCached(
     id = 1,
@@ -132,7 +135,7 @@ fun CharacterCached.Companion.mock() = CharacterCached(
     episode = emptyList(),
     url = "character url"
 )
- */
+
 /*
 @TestOnly
 fun LocationCharacterCached.Companion.mock() = LocationCharacterCached(

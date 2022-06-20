@@ -1,5 +1,6 @@
 package dmar.akan.akademiaandroida.features.characters.data.local.model
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import dmar.akan.akademiaandroida.features.characters.domain.model.Character
@@ -12,8 +13,12 @@ data class CharacterCached(
     val species: String,
     val type: String,
     val gender: String,
-    val origin: Character.CharacterOrigin,
-    val location: Character.CharacterLocation,
+//    val origin: Character.CharacterOrigin,
+    @Embedded(prefix = "characterOriginCached")
+    val origin: CharacterOriginCached,
+//    val location: Character.CharacterLocation,
+    @Embedded(prefix = "characterLocationCached")
+    val location: CharacterLocationCached,
     val image: String,
     val episode: List<String>,
     val url: String
@@ -25,8 +30,8 @@ data class CharacterCached(
         character.species,
         character.type,
         character.gender,
-        character.origin,
-        character.location,
+        CharacterOriginCached(character.origin),
+        CharacterLocationCached(character.location),
         character.image,
         character.episode,
         character.url
@@ -40,8 +45,8 @@ data class CharacterCached(
         species = species,
         type = type,
         gender = gender,
-        origin = origin,
-        location = location,
+        origin = origin.toCharacterOrigin(),
+        location = location.toCharacterLocation(),
         image = image,
         episode = episode,
         url = url
