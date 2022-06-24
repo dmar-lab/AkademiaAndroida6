@@ -1,23 +1,20 @@
 package dmar.akan.akademiaandroida.core.di
 
+import androidx.room.Room
+import dmar.akan.akademiaandroida.core.database.AppDatabase
+import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 val databaseModule = module {
-/*
     single {
         Room.databaseBuilder(
-            androidApplication(),
-            CharactersDatabase::class.java,
-            "characters_db"
-        ).build()
+            androidContext(),
+            AppDatabase::class.java,
+            "appDatabase"
+        )
     }
 
-    factory<CharactersDao> {
-        get<CharactersDatabase>().characterDao()
-    }
-
-    factory<CharactersRepository> {
-        CharactersRepository(charactersDao = get())
-    }
-    */
+    single { get<AppDatabase>().episodeDao() }
+    single { get<AppDatabase>().characterDao() }
+    single { get<AppDatabase>().locationDao() }
 }

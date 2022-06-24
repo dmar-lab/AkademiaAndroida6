@@ -1,4 +1,4 @@
-package dmar.akan.akademiaandroida.features.data.remote.model
+package dmar.akan.akademiaandroida.core.api.model
 
 import com.google.gson.annotations.SerializedName
 import dmar.akan.akademiaandroida.features.locations.domain.model.Location
@@ -11,6 +11,7 @@ data class LocationRemote(
     @SerializedName("residents") val residents: List<String>,
     @SerializedName("url") val url: String
 ) {
+    companion object
 
     // mapping from LocationRemote to Location
     fun toLocation() = Location(

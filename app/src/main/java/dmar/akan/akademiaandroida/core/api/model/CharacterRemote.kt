@@ -1,4 +1,4 @@
-package dmar.akan.akademiaandroida.features.data.remote.model
+package dmar.akan.akademiaandroida.core.api.model
 
 import com.google.gson.annotations.SerializedName
 import dmar.akan.akademiaandroida.features.characters.domain.model.Character
@@ -16,6 +16,8 @@ data class CharacterRemote(
     @SerializedName("episode") val episode: List<String>,
     @SerializedName("url") val url: String
 ) {
+    companion object
+
     // mapping from CharacterRemote to Character
     fun toCharacter() = Character(
         id = id,
