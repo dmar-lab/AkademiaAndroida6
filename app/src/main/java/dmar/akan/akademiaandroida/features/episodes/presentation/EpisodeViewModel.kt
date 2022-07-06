@@ -20,6 +20,8 @@ class EpisodeViewModel(private val getEpisodesUseCase: GetEpisodesUseCase): View
         .also { getEpisodes(it) }
     }
 
+//    keep it simple:
+//    val episodes: LiveData<List<EpisodeDisplayable>> = Transformations.map(_episodes) { episodes ->
     val episodes: LiveData<List<EpisodeDisplayable>> = _episodes.map { episodes ->
         episodes.map { EpisodeDisplayable(it) }
     }
