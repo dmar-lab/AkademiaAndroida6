@@ -1,11 +1,12 @@
 package dmar.akan.akademiaandroida.core.base
 
+import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.hadilq.liveevent.LiveEvent
 
-open class BaseViewModel: ViewModel() {
+open class BaseViewModel: ViewModel(), DefaultLifecycleObserver {
 
     private val _message by lazy { LiveEvent<String>() }
     val message: LiveData<String> = _message

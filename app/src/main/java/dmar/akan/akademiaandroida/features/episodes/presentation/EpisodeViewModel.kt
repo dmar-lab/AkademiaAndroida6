@@ -17,8 +17,10 @@ class EpisodeViewModel(private val getEpisodesUseCase: GetEpisodesUseCase): Base
 
 //    keep it simple:
 //    val episodes: LiveData<List<EpisodeDisplayable>> = Transformations.map(_episodes) { episodes ->
-    val episodes: LiveData<List<EpisodeDisplayable>> = _episodes.map { episodes ->
-        episodes.map { EpisodeDisplayable(it) }
+    val episodes: LiveData<List<EpisodeDisplayable>> by lazy {
+        _episodes.map { episodes ->
+            episodes.map { EpisodeDisplayable(it) }
+        }
     }
 
     private fun getEpisodes(episodeLiveData: MutableLiveData<List<Episode>>) {
@@ -32,7 +34,12 @@ class EpisodeViewModel(private val getEpisodesUseCase: GetEpisodesUseCase): Base
                 episodeLiveData.value = episodes
             }*/
             result.onSuccess { episodeLiveData.value = it }
-            result.onFailure { handleFailure(it) }
+            result.onFailure { handleFailure(it) } // in BaseViewModel
         }
     }
+
+    /*override fun onResume(owner: LifecycleOwner) {
+        super.onResume(owner)
+        //
+    }*/
 }

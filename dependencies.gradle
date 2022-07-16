@@ -40,6 +40,7 @@ ext {
     ]
     lifecycleDependencies = [
             lifecycleViewmodelKtx : "androidx.lifecycle:lifecycle-viewmodel-ktx:" + lifecycleVersion,
+            lifecycleLivedataCoreKtx : "androidx.lifecycle:lifecycle-livedata-core-ktx:" + lifecycleVersion,
             lifecycleLivedataKtx : "androidx.lifecycle:lifecycle-livedata-ktx:" + lifecycleVersion,
             lifecycleRuntimeKtx : "androidx.lifecycle:lifecycle-runtime-ktx:" + lifecycleVersion,
             lifecycleCommonJava8 : "androidx.lifecycle:lifecycle-common-java8:" + lifecycleVersion,
